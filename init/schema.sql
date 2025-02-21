@@ -1,10 +1,10 @@
---Criação da Tabela Eventos
+--Criação da tabela Eventos
 CREATE TABLE Eventos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL
-)
+);
 
--- Criação da tabela Inscritos
+--Criação da tabela Inscritos
 CREATE TABLE Inscritos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
@@ -12,14 +12,14 @@ CREATE TABLE Inscritos (
     link TEXT,
     evento_id INTEGER NOT NULL,
     FOREIGN KEY (evento_id) REFERENCES Eventos (id) ON DELETE CASCADE ON UPDATE CASCADE
-)
+);
 
--- Criação da tabela Eventos_link
+--Criação da tabela Eventos_link
 CREATE TABLE Eventos_link (
-    id INTEGER PRIMARY_KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     evento_id INTEGER NOT NULL,
     inscrito_id INTEGER NOT NULL,
     link TEXT,
     FOREIGN KEY (evento_id) REFERENCES Eventos (id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (inscrito_id) REFERENCES Inscritos (id) ON DELETE CASCADE ON UPDATE CASCADE
-)
+    FOREIGN KEY (inscrito_id) REFERENCES Inscritos (id) ON DELETE CASCADE ON UPDATE
+);
